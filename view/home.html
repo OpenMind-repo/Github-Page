@@ -1,0 +1,39 @@
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="row">
+            <div class="container">
+                Cari Repositori : <input type="text" class="form-control" ng-model="search"
+                placeholder="cari judul..">
+            </div>
+            <div ng-repeat="repo in repos_all | filter:search | startFrom:currentPage*pageSize | limitTo:pageSize">
+                  <div class="block-update-card status">
+                    <div class="update-card-body">
+                      <div class="update-card-body">
+                        <h3 class="post-title">{{repo.name}}</h3>
+                        <p class="post-subtitle">
+                            Clone http = {{repo.clone_url}} <br>
+                            Clone  Ssh = {{repo.ssh_url}}     
+                        </p>
+                      </div>
+                    </div>
+                        <a href="#/repo/{{repo.name}}">
+                            <p class="text-center card-bottom-status">
+                               Detail {{repo.name}}
+                            </p>
+                        </a>
+                </div>  
+            </div>
+            <center class="row">
+
+                 <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="btn btn-primary">
+                    Previous
+                </button>
+                {{currentPage+1}}/{{numberOfPages()}}
+                <button ng-disabled="currentPage >= repos_all.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="btn btn-primary">
+                    Next
+                </button>
+            </center>
+            </div>
+    </div>
+<hr/>

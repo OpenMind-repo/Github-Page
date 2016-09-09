@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <title ng-bind="header"></title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="{{github_acount.img}}" >
+    <!-- Custom CSS -->
+    <link href="./assets/css/clean-blog.min.css" rel="stylesheet">
+    <link href="./assets/css/card.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/" ng-bind="github_acount.name"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#/about">About</a>
+                    </li>
+                    <li>
+                        <a href="#/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" ng-style="{'background-image': 'url(' + heading + ')'}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                      <center>
+                        <a href="{{github_acount.url}}">
+                          <img class="img img-circle" width="150" ng-src="{{github_acount.img}}" class="img img-responsive">
+                        </a>
+                        <br>
+                        <h5 class="subheading" ng-bind="github_acount.quote"></h5>
+                        <span ng-bind="page_name"></span>
+                        <br>
+                        <a href="{{github_acount.url}}" class="btn btn-primary">Follow Us</a>
+                      </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div ng-controller="ctrlglobal">
+      <div ng-view class="container">
+          <!--main in here:  -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="{{github_acount.url}}">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; <span ng-bind="github_acount.name"></span> 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+  <!-- Data include:  -->
+
+   <!-- lib include:  -->
+  <script type="text/javascript" src="./lib/angular.js"></script>
+  <script type="text/javascript" src="./lib/angular-routes.js"></script>
+  <script type="text/javascript" src="./lib/angular-storage.js"></script>  
+  <!-- config include:  -->
+  <script type="text/javascript" src="./config.js"></script>
+  <!--routes include:  -->
+  <script type="text/javascript" src="./router.js"></script>
+
+   <!-- loading bar -->
+ <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+  
+
+  <!-- controller:  -->
+  <script type="text/javascript" src="controller/ctrlglobal.js"> </script>
+  <script type="text/javascript" src="controller/ctrlhome.js"> </script>
+  <script type="text/javascript" src="controller/ctrlabout.js"> </script>
+  <script type="text/javascript" src="controller/ctrlcontact.js"> </script>
+  <script type="text/javascript" src="controller/ctrlrepo.js"></script>
+
+  <!-- ACTION inlude:  -->
+  <script type="text/javascript" src="./assets/js/jquery.js"></script>
+  <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.3.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="./assets/js/clean-blog.min.js"></script>
+  <script type="text/javascript" src="./assets/js/comment.js"></script>
+
+
+</html>
