@@ -25,6 +25,11 @@ var server= {
 
 username //username github anda (username != email)
 
+dan saat akan di deploy ke server sangat di anjurkan untuk kompresi semua javascript anda
+
+anda dapat mengkompresinya disini
+
+http://closure-compiler.appspot.com/home
 
 happy coding  ^_^
 
